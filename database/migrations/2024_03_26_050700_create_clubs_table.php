@@ -21,8 +21,6 @@ return new class extends Migration
             $table->bigInteger('president_id')->unsigned();
             $table->foreign('president_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
-    
-    
         });
     }
 

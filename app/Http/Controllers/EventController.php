@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\BaseController as BaseController;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Validator;
+use Illuminate\Http\JsonResponse;
 
-class EventController extends Controller
+class EventController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): JsonResponse
     {
-        return response()->json([
-            'success' => true,
-            'message' => 'List data post',
-        ], 200);
-        
+        $events = Event::all();
+        return $this->sendResponse($events,'all events');
     }
 
     /**
