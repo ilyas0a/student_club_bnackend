@@ -17,5 +17,8 @@ Route::middleware('auth:sanctum')->group( function () {
     Route::resource('/clubs',EventController::class);
 });
 
-Route::post('/auth/student/login',[AuthController::class,'loginStudnet']);
-Route::post('/auth/student/register',[AuthController::class,'registerStudnet']);
+Route::post('/auth/student/login',[AuthController::class,'loginStudent']);
+Route::post('/auth/student/register',[AuthController::class,'registerStudent']);
+
+Route::post('/auth/club/login',[AuthController::class,'loginClub']);
+Route::post('/auth/club/register',[AuthController::class,'registerClub']);
